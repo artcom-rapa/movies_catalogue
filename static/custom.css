@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+
+    color: #17a2b8;
+}
+.bg-dark {
+    background-color: #0d417575 !important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: rgba(97, 146, 206, 0.95);
+    border-color: #007bff;
+}
