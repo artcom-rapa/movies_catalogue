@@ -71,3 +71,4 @@ def test_get_single_movie_cast(monkeypatch):
     monkeypatch.setattr("tmdb_client.requests.get", requests_mock)
     movie = tmdb_client.get_single_movie_cast(movie_id=1, how_many=2)
     assert movie == movie_cast_mock['cast']
+
