@@ -18,6 +18,19 @@ def get_movies(how_many):
 """
 
 
+def head():
+    header = {"Authorization": f"Bearer {API_TOKEN}"}
+    return header
+
+
+def call_tmdb_api(endpoint):
+    headers = head()
+    full_url = f"https://api.themoviedb.org/3/{endpoint}"
+    response = requests.get(full_url, headers=headers)
+    response.raise_for_status()
+    return response.json()
+
+
 def get_movies_list(list_type):
     endpoint = f"https://api.themoviedb.org/3/movie/{list_type}"
     headers = {
@@ -73,7 +86,7 @@ def get_single_movie_images(movie_id):
 def search(search_query):
     base_url = "https://api.themoviedb.org/3/"
     headers = {
-       "Authorization": f"Bearer {API_TOKEN}"
+        "Authorization": f"Bearer {API_TOKEN}"
     }
     endpoint = f"{base_url}search/movie/?query={search_query}"
 

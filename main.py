@@ -25,6 +25,7 @@ def homepage():
 def utility_processor():
     def tmdb_image_url(path, size):
         return tmdb_client.get_poster_url(path, size)
+
     return {"tmdb_image_url": tmdb_image_url}
 
 
@@ -32,6 +33,7 @@ def utility_processor():
 def utility_processor():
     def tmdb_movie_info(path, size):
         return tmdb_client.get_poster_url(path, size)
+
     return {"tmdb_movie_info": tmdb_movie_info}
 
 
