@@ -1,21 +1,7 @@
 import requests
 
-API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YThlYmJiMGFhYTQxZTNhNWM3MzhlZWU2MTRlOGVjMCIsInN1YiI6IjVlZTUyMGQ5MGNiMzM1MDAyMmJkM2UwNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8Jwro20e9Dcr410aJ_LVBQQRkG7uyZtwuYSUm2mqUfI"
-
-"""
-def get_popular_movies():
-    endpoint = "https://api.themoviedb.org/3/movie/popular"
-    headers = {
-        "Authorization": f"Bearer {API_TOKEN}"
-    }
-    response = requests.get(endpoint, headers=headers)
-    return response.json()
-
-
-def get_movies(how_many):
-    data = get_popular_movies()
-    return data["results"][:how_many]
-"""
+import os
+API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
 
 
 def head():
