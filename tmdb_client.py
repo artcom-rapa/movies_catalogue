@@ -1,9 +1,7 @@
 import requests
 
 import os
-
 API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
-
 
 def head():
     header = {"Authorization": f"Bearer {API_TOKEN}"}
