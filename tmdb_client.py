@@ -1,7 +1,8 @@
 import requests
-
 import os
+
 API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
+
 
 def head():
     header = {"Authorization": f"Bearer {API_TOKEN}"}
@@ -17,8 +18,10 @@ def call_tmdb_api(endpoint):
 
 
 def get_movies_list(list_type):
-    endpoint = f"https://api.themoviedb.org/3/movie/{list_type}"
+    endpoint = f"movie/{list_type}"
     return call_tmdb_api(endpoint)
+
+
 """
     headers = {
         "Authorization": f"Bearer {API_TOKEN}"
@@ -27,6 +30,8 @@ def get_movies_list(list_type):
     response.raise_for_status()
     return response.json()
 """
+
+
 def get_movies(how_many, list_type="popular"):
     data = get_movies_list(list_type)
     return data["results"][:how_many]
